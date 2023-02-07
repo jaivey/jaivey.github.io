@@ -16,7 +16,9 @@
 <body>
 
     <div class="container">
-        <h1>HR Directory</h1>
+        <h1>IDSN 599 Lab 4 |HR Directory</h1>
+        <br>
+        <p>Below is our company HR directory. Click on the email icon to send an email or dial the number to call.</p>
     
         <!-- <div id="cards">
           <div class="card" style="width:25%;">
@@ -27,17 +29,26 @@
               <a class="btn btn-primary" href="mailto:mrfancypants@cats.com">Email Me</a>
               <a class="btn btn-primary" href="tel:000-000-0000">Call Me</a>
           </div>
-        </div> -->
+        </div> -->  
     
         <div id="directory">
           <table class="table table-striped" id="directoryTable">
             <thead>
               <tr>
                 <th>Photo</th>
-                <th>Name</th>
-                <th>Address</th>
-                <th>State</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>State/Province</th>
+                <th>Post Code</th>
+                <th>Country</th>
+                <th>Nationality</th>
+                <th>Age</th>
+                <th>DOB</th>
                 <th>Email</th>
+                <th>Username</th>
                 <th>Phone</th>
                 
               </tr>
@@ -45,18 +56,27 @@
             <tbody>
               <tr>
                 <td><img src="https://placekitten.com/125/125"></td>
-                <td>John Doe</td>
+                <td>Cindy</td>
+                <td>Clawford</td>
+                <td>female</td>
+                <td>1234 Main St.</td>
                 <td>San Francisco</td>
                 <td>California</td>
+                <td>94105</td>
+                <td>United States</td>
+                <td>US</td>
+                <td>32</td>
+                <td>1994-07-07</td>
                 <td>
-                  <a href="mailto:mrfancypants@cats.com">mrfancypants@cats.com</a>
+                  <a href="mailto:cindy.clawford@cats.com">cindy.clawford@cats.com</a>
                 </td>
+                <td>imakitty</td>
                 <td>
-                  <a href="tel:000-000-0000">000-000-0000</a>
+                  <a href="tel:562-867-5309">562-867-5309</a>
                 </td>
               </tr>
             </tbody>
-          </table>
+          </table>   
         </div>
       </div>
     
@@ -65,6 +85,27 @@
 <script>
     d3.csv("hr-directory.csv", function (data) {
       console.log(data);
+      // Append the data to the table.
+      let row = '<tr>';
+        row += '<td><img src="' + data['picture.large'] + '"></td>';
+        row += '<td>' + data.nameFirst + '</td>';
+        row += '<td>' + data.nameLast + '</td>';
+        row += '<td> '+ data.gender + '</td>';
+        row += '<td>' + data['location.street.number'] + ' ' + data['location.street.name'] + '</td>';
+        row += '<td>' + data.city + '</td>';
+        row += '<td>' + data.state + '</td>';
+        row += '<td>' + data['location.postcode'] + '</td>';
+        row += '<td>' + data.country + '</td>';
+        row += '<td>' + data.nat + '</td>';
+        row += '<td>' + data['dob.age'] + '</td>';
+        row += '<td>' + data['dob.date'] + '</td>';
+        row += '<td><a href="mailto:' + data.email + '">' + data.email + '</a></td>';
+        row += '<td>' + data['login.username'] + '</td>';
+        row += '<td><a href="tel:' + data.phone + '">' + data.phone + '</a></td>';
+        row += '</tr>';
+        d3.select('#directoryTable tbody').append('tr').html(row);
     });
   </script>
+
+
 </html>
