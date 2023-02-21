@@ -5,10 +5,7 @@
   
   /* #5b7065, black */
   body {
-    background: rgb(110, 92, 174); 
-    background: -webkit-radial-gradient(center, rgb(110, 92, 174) 0%, rgb(108, 184, 216) 100%);
-    background: -moz-radial-gradient(center, rgba(48, 64, 64, 1.0) 0%, rgba(0, 0, 0, 1.0) 100%);
-    background: radial-gradient(ellipse at center, rgba(110, 92, 64, ) 0%, rgba(0, 0, 0, 1.0) 100%);
+    background: rgb(34, 25, 71); 
     font-family: 'Railway', serif;
     min-height: 100vh;
   }
@@ -68,7 +65,7 @@
   }
   
   .to-do-list .fa-pen-to-square {
-    color: #5b5c70;
+    color: #c9d1c8;
   }
   
   .to-do-list button {
@@ -83,7 +80,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: rgba(32, 82, 209, 0.3);
+    background-color: rgba(239, 219, 157, 0.3);
     border-radius: 10px;
     padding: 8px;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
