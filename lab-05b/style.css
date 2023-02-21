@@ -5,7 +5,8 @@
   
   /* #5b7065, black */
   body {
-    background: rgb(75, 58, 145); 
+    background: rgb(117, 81, 171); 
+    background: linear-gradient(90deg, rgba(117, 81, 171, 1) 0%, rgb(83, 66, 20) 100%);
     font-family: 'Railway', serif;
     min-height: 100vh;
   }
@@ -80,7 +81,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: rgba(239, 219, 157, 0.3);
+    background-color: rgba(229, 204, 129, 0.3);
     border-radius: 10px;
     padding: 8px;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
